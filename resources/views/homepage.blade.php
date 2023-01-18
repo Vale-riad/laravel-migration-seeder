@@ -22,15 +22,13 @@
             <h1>Lista Treni</h1>
             <ul class="card">
                 @foreach ($trains as $train)
-                <li>{{$train->company}}</li>
-                <h3>{{$train->departure_station}}</h3>
-                <div>{{$train->arrival_station}}</div>
-                <div>{{$train->departure_time}}</div>
-                <div>{{$train->arrival_time}}</div>
-                <div>{{$train->train_code}}</div>
-                <div>{{$train->carriages}}</div>
-                <div>{{$train->on_time}}</div>
-                <div>{{$train->canceled}}</div>
+                <li>Treno:{{$train->company}}</li>
+                <h3>stazione di partenza:{{$train->departure_station}}</h3>
+                <div>Stazione di arrivo:{{$train->arrival_station}}</div>
+                <div>Orario di partenza:{{$train->departure_time}}</div>
+                <div>Orario di arrivo:{{$train->arrival_time}}</div>
+                <div>Codice treno:{{$train->train_code}}</div>
+                <div>Carrozza:{{$train->carriages}}</div>
                 @endforeach
             </ul>
 

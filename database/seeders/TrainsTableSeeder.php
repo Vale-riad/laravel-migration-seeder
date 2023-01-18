@@ -16,6 +16,7 @@ class TrainsTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
+        for($i = 0; $i <=20; $i++ ){
         //istanzio un nuovo oggetto del modello
         $new_train = new Train();
         $new_train->company = $faker->randomElement(['Italo','Trenitalia']);
@@ -23,13 +24,11 @@ class TrainsTableSeeder extends Seeder
         $new_train->arrival_station = $faker->city();
         $new_train->departure_time = $faker->time();
         $new_train->arrival_time = $faker->time();
-        $new_train->train_code =$faker->numberBetween(1,20);
+        $new_train->train_code =$faker->randomElement(['ER23JDVS','HAKAB745L','EMSBC20HY','LNS591RYB']);
         $new_train->carriages =$faker->numberBetween(1,10);
-        $new_train->on_time = $faker->rand(0,1);
-        $new_train->canceled = $faker->rand(0,1);
-
-
+   
         $new_train->save();
+        }
     }
 }
 
